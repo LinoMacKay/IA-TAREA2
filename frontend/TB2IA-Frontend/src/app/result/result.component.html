@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Resultado</h1>
+  <div class="results">
+    <div class="left-result">
+      <p>
+        El resultado es de:
+        <a style="font-weight: bold">{{ data.toSend.prediction }}</a>
+      </p>
+    </div>
+    <div class="right-result">
+      <p>Al: {{ data.toSend.percentaje | number }}%</p>
+    </div>
+  </div>
+</div>

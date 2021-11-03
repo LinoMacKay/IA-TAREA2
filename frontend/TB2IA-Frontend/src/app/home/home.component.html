@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Formulario para predicciones</h2>
+  <div class="image-container">
+    <img
+      id="blah"
+      [src]="
+        imageSrc ||
+        'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg'
+      "
+      alt="your image"
+    />
+
+    <input
+      #file
+      type="file"
+      hidden
+      accept="image/*"
+      (change)="readURL($event)"
+    />
+
+    <button (click)="file.click()">Seleccionar Imagen</button>
+    <label>
+      {{ fileName }}
+      <mat-icon *ngIf="fileName != 'No File Selected'" (click)="deleteFile()"
+        >delete</mat-icon
+      >
+    </label>
+  </div>
+  <button id="submit" (click)="uploadFile()">Realizar Predicción</button>
+</div>
