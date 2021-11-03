@@ -6,7 +6,7 @@
 Entrar a la carpeta del frontend  del proyecto y ejecutar el comando `npm init` para descargar todos los paquetes necesarios para después ejecutar el comando 
 `npm start` 
 
-El modelo está previamente creado en un .ipynb en google collab para luego ser exportado y utilizado en el backend. Se utilizó collab debido a que el uso del mismo enviromen
+El modelo está previamente creado en un .ipynb en google collab para luego ser exportado y utilizado en el backend. Se utilizó collab debido a que el uso del mismo enviroment
 permite una creación del modelo mucho más rápida
 
 
