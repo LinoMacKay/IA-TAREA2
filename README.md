@@ -11,5 +11,5 @@ permite una creación del modelo mucho más rápida
 
 
 # Backend
-En el caso del back es necesario tener instalado Flask,Tensorflow,Numpy,flask_cors y para iniciar el proyecto se debe setear como proyecto flask al app.py de esta manera `set FLASK_APP=app.py`
+En el caso del back es necesario tener instalado **Flask, Tensorflow, Numpy, flask_cors** y para iniciar el proyecto se debe setear como proyecto flask al app.py de esta manera `set FLASK_APP=app.py`
 para luego utilizar el comando `flask run`
