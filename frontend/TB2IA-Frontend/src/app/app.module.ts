@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from 'src/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultComponent } from './result/result.component';
+import { NotificationComponent } from './shared/notification/notification.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AppbarComponent, ResultComponent],
+  declarations: [AppComponent, HomeComponent, AppbarComponent, ResultComponent, NotificationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

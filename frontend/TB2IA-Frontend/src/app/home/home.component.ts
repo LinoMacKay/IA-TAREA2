@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { NotificationService } from 'src/services/notification.service';
 import { PredictionService } from 'src/services/prediction.service';
 import { ResultComponent } from '../result/result.component';
 
@@ -11,9 +12,10 @@ import { ResultComponent } from '../result/result.component';
 export class HomeComponent implements OnInit {
   constructor(
     private predictionService: PredictionService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private notificationService: NotificationService
   ) {}
-
+  isLoading = false;
   imageSrc: string = '';
   @ViewChild('file') myInputVariable!: ElementRef;
   fileName: string = 'No File Selected';
@@ -38,12 +40,13 @@ export class HomeComponent implements OnInit {
     this.myInputVariable.nativeElement.value = '';
     this.imageSrc = '';
     this.fileName = 'No File Selected';
-    this.selectedFiles.pop();
+    this.selectedFiles = [];
     console.log(this.myInputVariable.nativeElement.files);
   }
 
   uploadFile() {
     if (this.imageSrc.length > 0) {
+      this.isLoading = true;
       const fd = new FormData();
       fd.append('file', this.selectedFiles[0]);
 
@@ -52,9 +55,15 @@ export class HomeComponent implements OnInit {
           percentaje: resp.percentaje,
           prediction: resp.prediction,
         };
-
+        this.isLoading = false;
+        this.deleteFile();
         this.openDialog(response);
       });
+    } else {
+      this.notificationService.OpenSnackbar(
+        'Por favor ingrese una imagen',
+        'warning'
+      );
     }
   }
 

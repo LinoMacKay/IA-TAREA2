@@ -11,6 +11,8 @@ export class ResultComponent implements OnInit {
     public dialogRef: MatDialogRef<ResultComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
-
-  ngOnInit(): void {}
+  porcentaje = 0.0;
+  ngOnInit(): void {
+    this.porcentaje = this.data.toSend.percentaje.toFixed(2) as number;
+  }
 }
