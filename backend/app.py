@@ -35,7 +35,7 @@ def predict():
             route = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(route)
             # Cargando el modelo
-            model = load_model('modelMascarilla.h5')
+            model = load_model('modelMascarillaPMC.h5')
             img = tf.keras.utils.load_img(route, target_size=(180, 180))
             img_array = tf.keras.utils.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0)
